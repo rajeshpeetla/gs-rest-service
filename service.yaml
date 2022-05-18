@@ -9,4 +9,4 @@ spec:
       targetPort: 8080
       NodePort: 30080
   selector:
-    app: my-app
+    app: ${REPOSITORY_TAG}
