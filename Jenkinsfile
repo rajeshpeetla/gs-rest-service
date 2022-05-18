@@ -3,7 +3,7 @@ pipeline {
 
    environment {
  
-     SERVICE_NAME = "fleetman-webapp"
+     SERVICE_NAME = "gs-rest-service"
      ECR_URI = "738942673819.dkr.ecr.us-east-2.amazonaws.com/fleetman-webapp"
      REPOSITORY_TAG ="${ECR_URI}:${BUILD_ID}"
    }
@@ -12,7 +12,8 @@ pipeline {
       
       stage('Build') {
          steps {
-            sh 'echo No build required for Webapp.'
+            sh 'mvn clean package'
+            //sh 'echo No build required for Webapp.'
          }
       }
 
