@@ -12,8 +12,8 @@ pipeline {
       
       stage('Build') {
          steps {
-             //'mvn clean package'
-            bat label: '', script: 'mvn compile'
+             sh 'bash mvn clean package'
+           
             // sh 'echo No build required for Webapp.'
          }
       }
