@@ -4,6 +4,7 @@ metadata:
   name: my-app-service
 spec:
   ports:
+  type: NodePort
     - port: 80
       targetPort: 8080
       NodePort: 30080
