@@ -12,7 +12,7 @@ pipeline {
       
       stage('Build') {
          steps {
-            sh 'bash mvn clean package'
+            sh 'mvn clean package'
             // sh 'echo No build required for Webapp.'
          }
       }
