@@ -37,7 +37,8 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
-             sh '/var/lib/jenkins/workspace/gs-rest-service/jenkins-cluster-admin-config'
+             // sh '/var/lib/jenkins/workspace/gs-rest-service/jenkins-cluster-admin-config'
+             sh 'kubectl apply -f /var/lib/jenkins/workspace/gs-rest-service/jenkins-cluster-admin-config --token $TOKEN_FROM_WITH_CREDENTIALS --server apiserver.hostname.local'
              sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
       }
