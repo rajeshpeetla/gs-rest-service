@@ -39,7 +39,7 @@ pipeline {
           steps {
              // sh '/var/lib/jenkins/workspace/gs-rest-service/jenkins-cluster-admin-config'
           
-             sh 'aws eks --region us-east-2 update-kubeconfig --name terraform-eks-demo'
+             
              sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
       }
