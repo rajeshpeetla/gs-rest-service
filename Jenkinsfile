@@ -37,7 +37,7 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
-           // sh '/var/lib/jenkins/workspace/fleetman-webapp/jenkins-cluster-admin-config'
+             sh '/var/lib/jenkins/workspace/fleetman-webapp/jenkins-cluster-admin-config'
              sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
       }
