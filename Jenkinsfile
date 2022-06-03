@@ -41,7 +41,7 @@ pipeline {
           
              
              // sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
-             sh 'kubectl apply -f /var/lib/jenkins/workspace/gs-rest-service/deploy.yaml --context terraform-eks-demo'
+             sh 'kubectl apply -f /var/lib/jenkins/workspace/gs-rest-service/deploy.yaml --token $TOKEN_FROM_WITH_CREDENTIALS --server apiserver.hostname.local'
           }
       }
    }
