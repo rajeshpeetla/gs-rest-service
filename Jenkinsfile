@@ -40,7 +40,7 @@ pipeline {
              // sh '/var/lib/jenkins/workspace/gs-rest-service/jenkins-cluster-admin-config'
           
              
-             sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f - --context terraform-eks-demo'
+             sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
       }
    }
